@@ -1,16 +1,16 @@
-#Plawright framework for SwagLabs Application
+# Plawright framework for SwagLabs Application
 
-###Pre-requisite
+### Pre-requisite
 Node JS
 visual Studio
 playwright Tool
 
-###install dependencies
+### install dependencies
 ```
 npm install
 ```
 
-###install browser
+### install browser
 ```
 npx playwright install --with-deps chromium
 ```
