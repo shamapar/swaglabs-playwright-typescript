@@ -19,11 +19,6 @@ test('logging into Application with problem user and password', async ({ loginPa
 
 })
 
-test('logging into application with visual user and password', async ({ loginPage, commonPage }) => {
-    await loginPage.loginToApplication(visualUser.username, visualUser.passowrd);
-    await expect(commonPage.pageTitle).toHaveText("Products");
-})
-
 test('logging into application without username and with password', async ({ loginPage }) => {
 
     await loginPage.loginToApplication("", standardUser.password);

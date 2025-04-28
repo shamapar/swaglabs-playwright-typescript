@@ -3,7 +3,7 @@
 ### Pre-requisite
 Node JS
 visual Studio
-playwright Tool
+
 
 ### install dependencies
 ```
@@ -18,7 +18,6 @@ for more details check official playwright document: https://playwright.dev/docs
 
 run commands
 ```
-npx playwright --project=chrome test
-npx playwright test --project=chrome --headed
-
+npx playwright --project=chromium test
+npx playwright test --project=chromium --headed
 ```

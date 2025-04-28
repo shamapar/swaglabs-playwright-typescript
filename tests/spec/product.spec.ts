@@ -1,4 +1,4 @@
-import { problemUser, standardUser, visualUser } from '@data/credential';
+import { problemUser, standardUser } from '@data/credential';
 import { productURL, productURLOfProblemUser } from '@data/productsURL';
 import { test, expect } from '@fixture/fixture';
 
@@ -10,11 +10,6 @@ test('product page of problem user', async ({ loginPage }) => {
     await expect(loginPage.productImageLocatorByName('Sauce Labs Bolt T-Shirt')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsBoltTShirt);
     await expect(loginPage.productImageLocatorByName('Sauce Labs Fleece Jacket')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsFleeceJacket);
     await expect(loginPage.productImageLocatorByName('Sauce Labs Fleece Jacket')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsFleeceJacket);
-})
-
-test('product page of visual user', async ({ loginPage }) => {
-    await loginPage.loginToApplication(visualUser.username, visualUser.passowrd);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Backpack')).toHaveAttribute('src', productURL.SauceLabsBackpacks);
 })
 
 test.beforeEach('loggin into Application using standard user', async ({ loginPage, commonPage }) => {

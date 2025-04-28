@@ -13,7 +13,4 @@ export const problemUser = {
     username: "problem_user",
     passowrd: "secret_sauce"
 }
-export const visualUser = {
-    username: "visual_user",
-    passowrd: "secret_sauce"
-}
+

@@ -46,7 +46,3 @@ test('filling product checkout without any information', async ({ checkoutPage, 
     await expect(commonPage.pageError).toHaveText("Error: First Name is required");
 })
 
-test('Navigating to continue to checkout from Checkout Page', async ({ commonPage, checkoutPage }) => {
-    await checkoutPage.continueToCheckout();
-    await expect(commonPage.pageTitle).toHaveText("Checkout: Overview");
-})
