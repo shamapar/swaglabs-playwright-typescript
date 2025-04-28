@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@pom/*": [
+                "./tests/pom/*"
+            ],
+            "@data/*": [
+                "./tests/testData/*"
+            ],
+            "@fixture/*": [
+                "./tests/customFixture/*"
+            ]
+        }
+    }
+}
