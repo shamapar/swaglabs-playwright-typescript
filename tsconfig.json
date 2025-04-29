@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "baseUrl": ".",
         "paths": {
             "@pom/*": [
@@ -12,5 +14,8 @@
                 "./tests/customFixture/*"
             ]
         }
-    }
+    },
+    "exclude": [
+        "eslint.config.mjs"
+    ]
 }

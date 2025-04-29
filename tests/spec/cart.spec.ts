@@ -10,7 +10,7 @@ test.beforeEach('loggin into Application and adding products to cart', async ({ 
     await expect(commonPage.pageTitle).toHaveText("Your Cart");
 })
 
-test('Removing a product from cart', async ({ productPage, commonPage, cartPage }) => {
+test('Removing a product from cart', async ({ commonPage, cartPage }) => {
     await commonPage.removeProductFromCart('Sauce Labs Backpack').click();
     await expect(commonPage.numberOfItemInCart).toHaveText("1");
     await expect(cartPage.removeProductFromCart('Sauce Labs Backpack')).toBeHidden();

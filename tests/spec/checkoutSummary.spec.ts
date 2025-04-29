@@ -1,6 +1,6 @@
 import { userInforamtion } from '@data/checkoutUserInformation';
 import { standardUser } from '@data/credential';
-import { productNames, productPrice } from '@data/productData';
+import productData from "@data/productData.json";
 import { test, expect } from '@fixture/fixture';
 
 test.beforeEach('loggin into Application ', async ({ loginPage }) => {
@@ -9,33 +9,33 @@ test.beforeEach('loggin into Application ', async ({ loginPage }) => {
 
 test('verifying number of products in  summary cart', async ({ productPage, cartPage, checkoutPage, checkoutSummaryPage }) => {
 
-    await productPage.cartButton(productNames.backPack).click();
-    await productPage.cartButton(productNames.bikeLight).click()
+    await productPage.cartButton(productData.backPack.name).click();
+    await productPage.cartButton(productData.bikeLight.name).click()
     await productPage.cartLink.click();
     await cartPage.clickOnCheckoutButton();
     await checkoutPage.fillingCheckoutInformation(userInforamtion.firstname, userInforamtion.lastname, userInforamtion.postalCode)
     await checkoutPage.continueToCheckout();
 
     const allProducts = await checkoutSummaryPage.checkProductInCart();
-    expect(allProducts).toContain(productNames.backPack);
-    expect(allProducts).toContain(productNames.bikeLight);
+    expect(allProducts).toContain(productData.backPack.name);
+    expect(allProducts).toContain(productData.bikeLight.name);
 
 })
 
 test('verifying product price by its name', async ({ commonPage, productPage, cartPage, checkoutPage }) => {
-    await productPage.cartButton(productNames.backPack).click();
-    await productPage.cartButton(productNames.bikeLight).click()
+    await productPage.cartButton(productData.backPack.name).click();
+    await productPage.cartButton(productData.bikeLight.name).click()
     await productPage.cartLink.click();
     await cartPage.clickOnCheckoutButton();
     await checkoutPage.fillingCheckoutInformation(userInforamtion.firstname, userInforamtion.lastname, userInforamtion.postalCode)
     await checkoutPage.continueToCheckout();
 
-    await expect(commonPage.productPriceByName(productNames.backPack)).toHaveText(productPrice.SauceLabsBackpack);
-    await expect(commonPage.productPriceByName(productNames.bikeLight)).toHaveText(productPrice.SauceLabsBikeLight);
+    await expect(commonPage.productPriceByName(productData.backPack.name)).toHaveText(productData.backPack.price);
+    await expect(commonPage.productPriceByName(productData.bikeLight.name)).toHaveText(productData.bikeLight.price);
 })
 
 test('verifying total purchase amount including 8% tax of a product', async ({ checkoutSummaryPage, productPage, cartPage, checkoutPage }) => {
-    await productPage.cartButton(productNames.backPack).click();
+    await productPage.cartButton(productData.backPack.name).click();
     await productPage.cartLink.click();
     await cartPage.clickOnCheckoutButton();
     await checkoutPage.fillingCheckoutInformation(userInforamtion.firstname, userInforamtion.lastname, userInforamtion.postalCode)
@@ -45,8 +45,8 @@ test('verifying total purchase amount including 8% tax of a product', async ({ c
 })
 
 test('verifying total purchase amount including 8% tax of multiple product', async ({ checkoutSummaryPage, productPage, cartPage, checkoutPage }) => {
-    await productPage.cartButton(productNames.backPack).click();
-    await productPage.cartButton(productNames.bikeLight).click()
+    await productPage.cartButton(productData.backPack.name).click();
+    await productPage.cartButton(productData.bikeLight.name).click()
     await productPage.cartLink.click();
     await cartPage.clickOnCheckoutButton();
     await checkoutPage.fillingCheckoutInformation(userInforamtion.firstname, userInforamtion.lastname, userInforamtion.postalCode)
@@ -56,7 +56,7 @@ test('verifying total purchase amount including 8% tax of multiple product', asy
 })
 
 test('final product checkout to complete page ', async ({ checkoutSummaryPage, checkoutCompletePage, productPage, cartPage, checkoutPage }) => {
-    await productPage.cartButton(productNames.backPack).click();
+    await productPage.cartButton(productData.backPack.name).click();
     await productPage.cartLink.click();
     await cartPage.clickOnCheckoutButton();
     await checkoutPage.fillingCheckoutInformation(userInforamtion.firstname, userInforamtion.lastname, userInforamtion.postalCode)

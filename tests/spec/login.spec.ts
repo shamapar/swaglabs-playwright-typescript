@@ -1,6 +1,5 @@
 import { test, expect } from '@fixture/fixture';
 import { lockedOutUser, problemUser, standardUser } from '@data/credential';
-import { productURL, productURLOfProblemUser } from '@data/productsURL';
 
 test('logging into application with valid username and password', async ({ loginPage, commonPage }) => {
     await loginPage.loginToApplication(standardUser.username, standardUser.password);

@@ -1,0 +1,38 @@
+{
+    "backPack": {
+        "name": "Sauce Labs Backpack",
+        "price": "$29.99",
+        "url": "https://www.saucelabs.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    },
+    "bikeLight": {
+        "name": "Sauce Labs Bike Light",
+        "price": "$9.99",
+        "url": "https://www.saucelabs.com/static/media/bike-light-520x600.0fa81530.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    },
+    "boltTshirt": {
+        "name": "Sauce Labs Bolt T-Shirt",
+        "price": "$15.99",
+        "url": "https://www.saucelabs.com/static/media/bolt-shirt-1200x1200.c0dae290.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    },
+    "fleeceJacket": {
+        "name": "Sauce Labs Fleece Jacket",
+        "price": "$49.99",
+        "url": "https://www.saucelabs.com/static/media/sauce-pullover-jacket-500x600.439df928.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    },
+    "onesie": {
+        "name": "Sauce Labs Onesie",
+        "price": "$7.99",
+        "url": "https://www.saucelabs.com/static/media/sauce-labs-onesie-1200x1200.a1650edb.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    },
+    "redTshirt": {
+        "name": "Test.allTheThings() T-Shirt (Red)",
+        "price": "$15.99",
+        "url": "https://www.saucelabs.com/static/media/red-tshirt-1200x1200.b156e377.jpg",
+        "incorrectUrl": "/static/media/sl-404.168b1cce.jpg"
+    }
+}

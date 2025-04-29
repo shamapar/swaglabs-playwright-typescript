@@ -1,15 +1,15 @@
 import { problemUser, standardUser } from '@data/credential';
-import { productURL, productURLOfProblemUser } from '@data/productsURL';
 import { test, expect } from '@fixture/fixture';
+import productData from "@data/productData.json";
 
 test('product page of problem user', async ({ loginPage }) => {
 
     await loginPage.loginToApplication(problemUser.username, problemUser.passowrd);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Backpack')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsBackpack);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Bike Light')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsBikeLight);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Bolt T-Shirt')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsBoltTShirt);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Fleece Jacket')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsFleeceJacket);
-    await expect(loginPage.productImageLocatorByName('Sauce Labs Fleece Jacket')).toHaveAttribute('src', productURLOfProblemUser.SauceLabsFleeceJacket);
+    await expect(loginPage.productImageLocatorByName(productData.backPack.name)).toHaveAttribute('src', productData.backPack.incorrectUrl);
+    await expect(loginPage.productImageLocatorByName(productData.bikeLight.name)).toHaveAttribute('src', productData.bikeLight.incorrectUrl);
+    await expect(loginPage.productImageLocatorByName(productData.boltTshirt.name)).toHaveAttribute('src', productData.boltTshirt.incorrectUrl);
+    await expect(loginPage.productImageLocatorByName(productData.fleeceJacket.name)).toHaveAttribute('src', productData.fleeceJacket.incorrectUrl);
+    await expect(loginPage.productImageLocatorByName(productData.onesie.name)).toHaveAttribute('src', productData.onesie.incorrectUrl);
 })
 
 test.beforeEach('loggin into Application using standard user', async ({ loginPage, commonPage }) => {
@@ -20,34 +20,34 @@ test.beforeEach('loggin into Application using standard user', async ({ loginPag
 
 
 test('Adding single product in the cart', async ({ productPage, commonPage }) => {
-    await productPage.cartButton('Sauce Labs Backpack').click();
-    await expect(productPage.cartButton('Sauce Labs Backpack')).toHaveText("Remove");
+    await productPage.cartButton(productData.backPack.name).click();
+    await expect(productPage.cartButton(productData.backPack.name)).toHaveText("Remove");
     await expect(commonPage.numberOfItemInCart).toHaveText("1");
 })
 
 test('Adding multiple product in the cart', async ({ productPage, commonPage }) => {
-    await productPage.cartButton('Sauce Labs Backpack').click();
-    await productPage.cartButton('Sauce Labs Bike Light').click();
-    await expect(productPage.cartButton('Sauce Labs Backpack')).toHaveText("Remove");
-    await expect(productPage.cartButton('Sauce Labs Bike Light')).toHaveText("Remove");
+    await productPage.cartButton(productData.backPack.name).click();
+    await productPage.cartButton(productData.bikeLight.name).click();
+    await expect(productPage.cartButton(productData.backPack.name)).toHaveText("Remove");
+    await expect(productPage.cartButton(productData.bikeLight.name)).toHaveText("Remove");
     await expect(commonPage.numberOfItemInCart).toHaveText("2");
 })
 
 test('removing a product from product page', async ({ productPage, commonPage }) => {
-    await productPage.cartButton('Sauce Labs Backpack').click();
-    await productPage.cartButton('Sauce Labs Bike Light').click();
-    await expect(productPage.cartButton('Sauce Labs Backpack')).toHaveText("Remove");
-    await expect(productPage.cartButton('Sauce Labs Bike Light')).toHaveText("Remove");
+    await productPage.cartButton(productData.backPack.name).click();
+    await productPage.cartButton(productData.bikeLight.name).click();
+    await expect(productPage.cartButton(productData.backPack.name)).toHaveText("Remove");
+    await expect(productPage.cartButton(productData.bikeLight.name)).toHaveText("Remove");
     await expect(commonPage.numberOfItemInCart).toHaveText("2");
 
-    await commonPage.removeProductFromCart("Sauce Labs Backpack").click();
+    await commonPage.removeProductFromCart(productData.backPack.name).click();
     await expect(commonPage.numberOfItemInCart).toHaveText("1");
-    await expect(commonPage.removeProductFromCart('Sauce Labs Backpack')).toBeHidden();
+    await expect(commonPage.removeProductFromCart(productData.backPack.name)).toBeHidden();
 })
 
 test('Navigating to cart link from Product Page', async ({ productPage, commonPage }) => {
-    await productPage.cartButton('Sauce Labs Backpack').click();
-    await expect(productPage.cartButton('Sauce Labs Backpack')).toHaveText("Remove");
+    await productPage.cartButton(productData.backPack.name).click();
+    await expect(productPage.cartButton(productData.backPack.name)).toHaveText("Remove");
     await productPage.cartLink.click();
     await expect(commonPage.pageTitle).toHaveText("Your Cart");
 })
