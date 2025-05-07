@@ -4,6 +4,10 @@
 Node JS
 visual Studio
 
+### clone repository
+```
+git clone https://github.com/shamapar/swaglabs-playwright-typescript.git
+```
 
 ### install dependencies
 ```
