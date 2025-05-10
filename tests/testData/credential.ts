@@ -11,6 +11,6 @@ export const lockedOutUser = {
 }
 export const problemUser = {
     username: "problem_user",
-    passowrd: "secret_sauce"
+    password: "secret_sauce"
 }
 

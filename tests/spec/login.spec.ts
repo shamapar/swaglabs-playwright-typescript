@@ -6,14 +6,14 @@ test('logging into application with valid username and password', async ({ login
     await expect(commonPage.pageTitle).toHaveText("Products");
 })
 
-test('logging into application with lockedout user and password', async ({ loginPage }) => {
+test('logging into application with locked out user and password', async ({ loginPage }) => {
     await loginPage.loginToApplication(lockedOutUser.username, lockedOutUser.password);
     await expect(loginPage.loginError).toHaveText("Epic sadface: Sorry, this user has been locked out.");
 })
 
 test('logging into Application with problem user and password', async ({ loginPage, commonPage }) => {
 
-    await loginPage.loginToApplication(problemUser.username, problemUser.passowrd);
+    await loginPage.loginToApplication(problemUser.username, problemUser.password);
     await expect(commonPage.pageTitle).toHaveText("Products");
 
 })

@@ -4,7 +4,7 @@ import productData from "@data/productData.json";
 
 test('product page of problem user', async ({ loginPage }) => {
 
-    await loginPage.loginToApplication(problemUser.username, problemUser.passowrd);
+    await loginPage.loginToApplication(problemUser.username, problemUser.password);
     await expect(loginPage.productImageLocatorByName(productData.backPack.name)).toHaveAttribute('src', productData.backPack.incorrectUrl);
     await expect(loginPage.productImageLocatorByName(productData.bikeLight.name)).toHaveAttribute('src', productData.bikeLight.incorrectUrl);
     await expect(loginPage.productImageLocatorByName(productData.boltTshirt.name)).toHaveAttribute('src', productData.boltTshirt.incorrectUrl);
