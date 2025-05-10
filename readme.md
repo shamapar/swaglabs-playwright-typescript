@@ -24,4 +24,6 @@ run commands
 ```
 npx playwright --project=chromium test
 npx playwright test --project=chromium --headed
+npx playwright test --project=chromium --ui
 ```
+
