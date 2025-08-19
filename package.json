@@ -1,8 +1,10 @@
 {
-  "name": "playwright_automation_swablabs",
+  "name": "playwright_automation_swag_labs",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
