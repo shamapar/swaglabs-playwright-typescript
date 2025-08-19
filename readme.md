@@ -1,4 +1,4 @@
-# Plawright framework for SwagLabs Application
+# Playwright framework for SwagLabs Application
 
 ### Pre-requisite
 Node JS
