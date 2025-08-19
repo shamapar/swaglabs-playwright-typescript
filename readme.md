@@ -1,4 +1,4 @@
-# Plawright framework for SwagLabs Application
+# Playwright framework for SwagLabs Application
 
 ### Pre-requisite
 Node JS
@@ -22,6 +22,7 @@ for more details check official playwright document: https://playwright.dev/docs
 
 run commands
 ```
+npm run test
 npx playwright --project=chromium test
 npx playwright test --project=chromium --headed
 npx playwright test --project=chromium --ui
